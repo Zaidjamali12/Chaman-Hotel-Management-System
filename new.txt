@@ -1,0 +1,74 @@
+====== MIRCHI HOTEL BILL ======
+Customer Name: ahmed
+Total Amount: 150 Rs
+===============================
+====== MIRCHI HOTEL BILL ======
+Customer Name: as
+Total Amount: 120 Rs
+===============================
+====== MIRCHI HOTEL BILL ======
+Customer Name: Kazi Ahmed ali mulo
+Total Amount: 900 Rs
+===============================
+====== MIRCHI HOTEL BILL ======
+Customer Name: gulo
+Total Amount: 120 Rs
+===============================
+====== MIRCHI HOTEL BILL ======
+Customer Name: y
+Total Amount: 720 Rs
+====== MIRCHI HOTEL BILL ======
+Customer Name: MUhmmmad khan
+Total Amount: 970 Rs
+Total Amount With Dicount: 873.0 Rs
+===============================
+====== MIRCHI HOTEL BILL ======
+Customer Name: 
+Total Amount: 0 Rs
+Total Amount With Dicount: 0.0 Rs
+===============================
+====== MIRCHI HOTEL BILL ======
+Customer Name: Muhammad zaid jamali
+Total Amount: 720 Rs
+Total Amount With Dicount: 648.0 Rs
+===============================
+====== MIRCHI HOTEL BILL ======
+Customer Name: Muhammad zaid
+Total Amount: 570 Rs
+Total Amount With Dicount: 513.0 Rs
+===============================
+====== MIRCHI HOTEL BILL ======
+Customer Name: zaid
+Total Amount: 120 Rs
+Total Amount With Dicount: 108.0 Rs
+===============================
+====== MIRCHI HOTEL BILL ======
+Customer Name: zaid
+Total Amount: 720 Rs
+Total Amount With Dicount: 648.0 Rs
+===============================
+====== MIRCHI HOTEL BILL ======
+Customer Name: za
+Total Amount: 450 Rs
+Total Amount With Dicount: 405.0 Rs
+===============================
+====== MIRCHI HOTEL BILL ======
+Customer Name: zaid ahmed
+Total Amount: 720 Rs
+Total Amount With Dicount: 648.0 Rs
+===============================
+====== MIRCHI HOTEL BILL ======
+Customer Name: HYder ali shah rashdi
+Total Amount: 420 Rs
+Total Amount With Dicount: 378.0 Rs
+===============================
+====== MIRCHI HOTEL BILL ======
+Customer Name: ali
+Total Amount: 120 Rs
+Total Amount With Dicount: 108.0 Rs
+===============================
+====== MIRCHI HOTEL BILL ======
+Customer Name: ased
+Total Amount: 300 Rs
+Total Amount With Dicount: 270.0 Rs
+===============================

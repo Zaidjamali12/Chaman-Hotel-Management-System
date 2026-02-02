@@ -1,75 +1,58 @@
 import pandas as pd
 import numpy as np
+import seaborn as sns
 import matplotlib.pyplot as plt
 
-#Task one Data cleaning (pandas)
-df=pd.read_csv('C:\\Users\Abdul Sattar\Downloads\weather_data.csv')
-
-fill=df.fillna(0)
-print(fill)
-
-date=df['Date']=pd.to_datetime(df['Date'])
-print(date)
-
-
+#task 1: Read the CSV file
+df=pd.read_csv("C:\\Users\Abdul Sattar\Downloads\sales_data.csv")
 print(df.head(5))
-#one extra thing 
-print(df.describe())
+print(df['Units Sold'].sum())
 
-#Step 2: Data Analysis (Pandas + NumPy)
-mean=np.mean(df['Temperature (°C)'])
-print(f"Mean ={mean}")
+# task 2 colum cleanup
+df.columns = df.columns.str.strip().str.lower().str.replace(' ', '_')
+print(df.columns)
 
-max=np.max(df['Humidity (%)'])
-print(f"Maximum Raning = {max}")
+# task 3:average total revenue.
+print(df['total_revenue'].mean())
 
-min=np.min(df['Humidity (%)'])
-print(f"Minimum Raning={min}")
+#task4:product lowest and highest price
+print("Minimum and Maximum Unit Price:")
+print(df['unit_price'].min())
+print(df['unit_price'].max())
 
-start_Date='2025-01-01'
-ending_date='2025-02-01'
+#task4:product lowest and highest price
+highest_Prodcut = df.loc[df['unit_price'].idxmax()]
+lowest_Product = df.loc[df['unit_price'].idxmin()]
+print("Highest Priced Product:")
+print(highest_Prodcut['product'], "with price:", highest_Prodcut['unit_price'])
+print("Lowest Priced Product:")
+print(lowest_Product['product'], "with price:", lowest_Product['unit_price'])
 
-date=df[(df['Date'] > start_Date)  & (df['Date'] <ending_date )]
-print(date)
-
-#days=df['Date'].sum()
-#print(f"Totel Days of Raning ={days}")
-
-data = df.groupby(df['Date'].dt.month)['Temperature (°C)'].mean()
-print(f'Values which in mean={data}')
-
-Standered_deviations=np.std(df['Temperature (°C)'])
-print(f"Standered_deviations {Standered_deviations}")
-
-# use Numpy to:
-max=np.max(df['Temperature (°C)'])
-print(f"Maximum Temperature = {max}")
-
-min=np.min(df['Temperature (°C)'])
-print(f"Minimum Temperature ={min}")
-
-#Step 3: Visualization (Matplotlib)
-plt.subplot(1,3,1)
-plt.plot(df['Date'],df['Temperature (°C)'],marker='*',color='Blue',mfc='r',mec='y',ms=20)
-fonts={'family':'Times New Roman','size':20 , 'color':'red'}
-plt.title("line ",fontdict=fonts)
-plt.xlabel("Date",fontdict=fonts)
-plt.ylabel("Temperature",fontdict=fonts)
-
-plt.subplot(1,3,2)
-plt.title("BAR",fontdict=fonts)
-plt.xlabel("Date",fontdict=fonts)
-plt.ylabel("Temperature",fontdict=fonts)
-plt.bar(data.index, data.values, color='darkgreen')
-
-
-plt.subplot(1,3,3)
-plt.pie(data,autopct='%1.2f%%')
-plt.title("PIE",fontdict=fonts)
-plt.xlabel("Date",fontdict=fonts)
-plt.ylabel("Temperature",fontdict=fonts)
-
-
-
-
+#Task 6: Bar chart of total revenue by region
+df.groupby('region')['total_revenue'].sum().plot(kind='bar', color='skyblue')
+plt.title('Total Revenue by Region')    
+plt.xlabel('Region')
+plt.ylabel('Total Revenue')
+plt.xticks(rotation=45)
+plt.tight_layout()
 plt.show()
+
+# Task 7: Pie chart of units sold by product
+df.groupby('product')['units_sold'].sum().plot(kind='pie', autopct='%1.1f%%', startangle=140)
+plt.title('Units Sold by Product')
+plt.ylabel('')
+plt.tight_layout()
+plt.show()
+
+# Task 8: Line chart of total revenue over timex
+df['date'] = pd.to_datetime(df['date'])
+df.set_index('date', inplace=True)
+df['total_revenue'].resample('M').sum().plot(kind='line', marker='o', color='orange')
+plt.title('Total Revenue Over Time')
+plt.xlabel('Date')
+plt.ylabel('Total Revenue')
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
+# Task 9:Correlation heatmap using seaborn
+

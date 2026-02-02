@@ -1,0 +1,2 @@
+your spam filter is a Machine Learning program that can learn to flag
+ spam given examples of spam emails (e.g., flagged by users)
